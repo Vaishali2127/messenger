@@ -1,7 +1,33 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
+import { ChatEngine } from "react-chat-engine";
+
+import { auth } from "../firebase";
 
 const Chats = () => {
-  return <div>Chats</div>;
+  const history = useHistory();
+
+  const handleLogout = async () => {
+    await auth.signOut();
+    history.push("/");
+  };
+
+  return (
+    <div className="chats-page">
+      <div className="nav-bar">
+        <div className="logo-tab">Unichat</div>
+        <div className="logout-tab" onClick={handleLogout}>
+          Logout
+        </div>
+      </div>
+      <ChatEngine
+        height="calc(100vh-66px)"
+        projectId="2bb22961-9810-4940-b489-34e92ee94b7a"
+        userName="."
+        userSecret="."
+      />
+    </div>
+  );
 };
 
 export default Chats;
