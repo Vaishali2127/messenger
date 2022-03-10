@@ -3,7 +3,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom/cjs/react-router-dom.min";
-import "./index.css";
+import "../index.css";
 
 // import Chats from './Chats'
 import Login from "./Login";
