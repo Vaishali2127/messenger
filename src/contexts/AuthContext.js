@@ -12,12 +12,13 @@ export const AuthProvider = ({ children }) => {
   const history = useHistory();
 
   useEffect(() => {
-    auth.onAuthStateChanged((user) => {
-      setUser(user);
+    auth.onAuthStateChanged((u) => {
+      setUser(u);
       setLoading(false);
-      if (user) history.push("/chats");
+
+      if (u) history.push("/chats");
     });
-  }, [user, history]);
+  }, []);
 
   const value = { user };
 

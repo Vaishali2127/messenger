@@ -3,6 +3,7 @@ import { GoogleOutlined, FacebookOutlined } from "@ant-design/icons";
 
 import firebase from "firebase/app";
 import { auth } from "../firebase";
+
 const Login = () => {
   return (
     <div id="login-page">
